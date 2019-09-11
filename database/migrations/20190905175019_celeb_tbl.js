@@ -15,7 +15,7 @@ exports.up = function(knex) {
       celebs.integer('celebs_age')
         .unsigned()
         .notNullable();
-      celebs.boolean('dead or alive')
+      celebs.boolean('dead_or_alive')
         .notNullable();
       celebs.integer('time_limit');
     });
