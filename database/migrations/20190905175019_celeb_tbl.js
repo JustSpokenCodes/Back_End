@@ -9,10 +9,13 @@ exports.up = function(knex) {
     })
     .createTable('celebs', celebs => {
       celebs.increments();
-      celebs.string('celebs_name', 128);
-      celebs
-        .integer('celebs_age')
+      celebs.string('celebs_name', 128)
+        .notNullable();
+      celebs.string('celebs_info', 500)
+      celebs.integer('celebs_age')
         .unsigned()
+        .notNullable();
+      celebs.boolean('dead or alive')
         .notNullable();
       celebs.integer('time_limit');
     });
