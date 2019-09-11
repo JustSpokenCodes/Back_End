@@ -17,7 +17,7 @@ exports.up = function(knex) {
       celebs.integer('time_limit');
     });
 };
-//somthing
+
 exports.down = function(knex, Promise) {
   return knex.schema.dropTableIfExists('users').dropTableIfExists('celebs');
 };
