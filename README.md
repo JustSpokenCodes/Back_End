@@ -18,9 +18,8 @@
 - [Testing](#testing)
 - [Intall Like This...](#install-like-this)
     - [Using The App](#using-the-app)
-- [Database in Development and Production](#database)
+- [Database in Development](#database)
     - [Development](#development)
-    - [Production](#production)
     - [Data Models](#data-models)
         - [User Table](#user-table)
         - [Celebs Table](#celeb-table)
@@ -86,7 +85,7 @@ Follow these steps:
 
 <p align="center"><a href="#table-of-contents"><strong>Back To Top</strong></a></p>
 
-* #### Database in Development and Production 
+* #### Database in Development
 
     - #### Development 
         - Development database setup:
@@ -98,11 +97,52 @@ Follow these steps:
                 connection: {
                 filename: './database/celeb.db3'
                 },
-            pool: {
+                pool: {
                 afterCreate: (conn, done) => {
                 conn.run('PRAGMA foreign_keys = ON', done);
                 }
-            },
-            migrations: { directory: './database/migrations'},
-    seeds: { directory: './database/seeds'}
-  }
+                },
+                migrations: { directory: './database/migrations'},
+                seeds: { directory: './database/seeds'}
+            }, 
+            ```
+        <p align="center"><a href="#table-of-contents"><strong>Back To Top</strong></a></p>
+
+    - #### Data Models
+
+        - #### Users Table 
+            * The ‘users’ table stores the profile of the user. Once thats done, a users row will be created once the ‘Log In’ line is put in for saved results.
+
+            ```js
+
+            return knex.schema.createTable('users', users => {
+                users.increments(); // primary key 
+
+                users.string('username', 128).unique(); // username field
+                users.string('password', 128).notNullable(); // password field
+                users.string('email', 256).unique(); // email field 
+    })
+    ```
+<p align="center"><a href="#table-of-contents"><strong>Back To Top</strong></a></p>
+
+- ##### Celebs Table 
+
+    * The celebs table contains the information of the celebrity and how long it took them to finish the quiz.
+
+        ```js
+
+            return knex.schema..createTable('celebs', celebs => {
+                celebs.increments(); // 
+                celebs.string('celebs_name', 128);
+                celebs
+                .integer('celebs_age')
+                .unsigned()
+                .notNullable();
+                celebs.integer('time_limit');
+
+    });
+    ```
+<p align="center"><a href="#table-of-contents"><strong>Back To Top</strong></a></p>
+
+- ##### Authencation 
+    * This application uses JSON Web Tokens (JWT) and Bcrypt to secure the log in password and username. This is in the code because it adds security to the log in process. 
