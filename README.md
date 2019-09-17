@@ -4,9 +4,7 @@
 
 ### Backing You Up: 
 
-| [**Joshua Stevens**] (https://github.com/justspokencodes) | [**Robert Gant**] 
-(https://github.com/gant123) |
-|:----------------------------------------------------:	|:---------------------------------------------:	|
+| [**Joshua Stevens**] (https://github.com/justspokencodes) | [**Robert Gant**] (https://github.com/gant123) |
 
 # Table of Contents 
 - [The Work](#the-work)
