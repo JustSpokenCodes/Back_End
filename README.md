@@ -9,11 +9,7 @@ Stretch: Aggregate the data collected from the user taking the quiz to take acco
 
 Allow users to share the results of their quizzes on a social media platform of your choice.
 
-- find celebrities website or just pictures of different black celebrities.
-- get the front looking good
-- make a login page
-- make a sign up page
-- make the routes connect on the front end
+
 - make the pages connect to the BackEnd
 - make the crud be accurate at where it’s going
 - make sure whomever's password is hash and salt
